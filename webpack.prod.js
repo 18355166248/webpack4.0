@@ -1,10 +1,11 @@
-const merge = require('webpack-merge');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const common = require('./webpack.common.js');
+const merge = require('webpack-merge')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const common = require('./webpack.common.js')
 const webpack = require('webpack')
 
 module.exports = merge(common, {
   // devtool: 'source-map', // 消耗资源 可以不需要
+  mode: 'production',
   plugins: [
     new UglifyJSPlugin({
       sourceMap: true
@@ -12,6 +13,5 @@ module.exports = merge(common, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     })
-  ],
-  mode: 'production'
-});
+  ]
+})
