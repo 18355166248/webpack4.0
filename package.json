@@ -48,6 +48,7 @@
   "dependencies": {
     "cake-chart": "^0.2.3",
     "express": "^4.16.4",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.13"
   }
 }

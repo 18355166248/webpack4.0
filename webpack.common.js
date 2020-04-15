@@ -22,12 +22,16 @@ module.exports = {
       _: 'lodash',
     }),
     new webpack.DllReferencePlugin({
-      context: path.join(__dirname, 'dll'),
+      context: path.join(__dirname, '..', 'dist'),
       manifest: require('./dll/alpha-manifest.json'), // eslint-disable-line
     }),
     new webpack.DllReferencePlugin({
-      context: path.join(__dirname, 'dll'),
+      context: path.join(__dirname, '..', 'dist'),
       manifest: require('./dll/beta-manifest.json'), // eslint-disable-line
+    }),
+    new webpack.DllReferencePlugin({
+      context: path.join(__dirname),
+      manifest: require('./dll/jquery-manifest.json'), // eslint-disable-line
     }),
     //这个主要是将生成的vendor.dll.js文件加上hash值插入到页面中。
     new AddAssetHtmlPlugin([
